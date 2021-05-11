@@ -1,0 +1,10 @@
+﻿@model (string, string)
+
+<div class="text-center">
+    <p>
+        select m.name, m.price, o.data_orders from menu m<br />
+        full join orders_meni om on m.id=om.menu_id full join orders o on om.orders_id=o.id full join<br />
+    </p>
+    <h1 style="margin-top: 40px;" class="display-4">Default time: @(Model.Item1)</h1>
+    <h1 class="display-4">Index time: @(Model.Item2)</h1>
+</div>

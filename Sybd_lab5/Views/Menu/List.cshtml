@@ -1,0 +1,65 @@
+﻿@model List<Menu>
+
+@{
+    ViewData["Title"] = "Menu list";
+}
+<div class="text-center">
+    <h1 class="display-4">Menus</h1>
+</div>
+<div class="text-center" style="margin-top: 20px">
+    @{
+        <p>
+            <a asp-action="Create">Create menu</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Volume
+                    </th>
+                    <th>
+                        Gram
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Volume)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Gram)
+                    </td>
+                    <td>
+                        <a asp-action="Update" asp-route-id="@(item.Id)">Update</a>
+                        <a asp-action="Delete" asp-route-id="@(item.Id)">Delete</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SYBD</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SYBD</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tests</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-controller="Test" asp-action="First">First test</a>
+                            <a class="dropdown-item" asp-controller="Test" asp-action="Second">Second test</a>
+                            <a class="dropdown-item" asp-controller="Test" asp-action="Third">Third test</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Buyers</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-controller="Buyer" asp-action="Create">Create</a>
+                            <a class="dropdown-item" asp-controller="Buyer" asp-action="List">Show</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Employees</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-controller="Employee" asp-action="Create">Create</a>
+                            <a class="dropdown-item" asp-controller="Employee" asp-action="List">Show</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-controller="Menu" asp-action="Create">Create</a>
+                            <a class="dropdown-item" asp-controller="Menu" asp-action="List">Show</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Orders</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-controller="Orders" asp-action="Create">Create</a>
+                            <a class="dropdown-item" asp-controller="Orders" asp-action="List">Show</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-dark" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Orders_meni</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" asp-controller="OrdersMeni" asp-action="Create">Create</a>
+                            <a class="dropdown-item" asp-controller="OrdersMeni" asp-action="List">Show</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - SYBD - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

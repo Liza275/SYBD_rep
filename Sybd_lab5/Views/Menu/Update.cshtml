@@ -1,0 +1,64 @@
+﻿@model Menu
+
+@{
+    ViewData["Title"] = "Update menu";
+}
+<div class="text-center">
+    <h2 class="display-4">Update menu</h2>
+</div>
+
+﻿<form class="container-fluid" style="max-width: 580px;" asp-action="Update">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <div class="row justify-content-between">
+            <label class="col-lg-4">
+                Price
+            </label>
+            <div class="col-lg-8">
+                <input asp-for="Price" type="text" step="0.01" name="price" required class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row justify-content-between">
+            <label class="col-lg-4">
+                Name
+            </label>
+            <div class="col-lg-8">
+                <input asp-for="Name" type="text" name="name" required class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row justify-content-between">
+            <label class="col-lg-4">
+                Volume
+            </label>
+            <div class="col-lg-8">
+                <input asp-for="Volume" type="text" step="0.01" name="volume" required class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row justify-content-between">
+            <label class="col-lg-4">
+                Gram
+            </label>
+            <div class="col-lg-8">
+                <input asp-for="Gram" type="text" step="0.01" name="gram" required class="form-control" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-lg-12">
+            <button type="submit" style="min-width: 100px" class="btn btn-sm btn-light">
+                Update
+            </button>
+        </div>
+    </div>
+</form>

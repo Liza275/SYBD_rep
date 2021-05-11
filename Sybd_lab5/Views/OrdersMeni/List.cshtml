@@ -1,0 +1,46 @@
+﻿@model List<OrdersMeni>
+
+@{
+    ViewData["Title"] = "Orders_Meni list";
+}
+<div class="text-center">
+    <h1 class="display-4">Orders_meni</h1>
+</div>
+<div class="text-center" style="margin-top: 20px">
+    @{
+        <p>
+            <a asp-action="Create">Create orders_meni</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Menu Id
+                    </th>
+                    <th>
+                        Orders id
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MenuId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrdersId)
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-menuid="@(item.MenuId)" , asp-route-orderid="@(item.OrdersId)">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
