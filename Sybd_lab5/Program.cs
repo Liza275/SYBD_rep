@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Sybd_lab5
 {
     public class Program
-    {
+    { 
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();

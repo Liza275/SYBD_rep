@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SYBD.Db.MongoDb;
 using Sybd_lab5.Storages;
 using Sybd_lab5.Storages.Interfaces;
 using System;
@@ -31,6 +32,7 @@ namespace Sybd_lab5
             services.AddTransient<IOrdersStorage, OrdersStorage>();
             services.AddTransient<IOrdersMeniStorage, OrdersMeniStorage>();
             services.AddTransient<ITestStorage, TestStorage>();
+            services.AddTransient<DbService>();
             services.AddControllersWithViews();
         }
 

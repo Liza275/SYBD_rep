@@ -1,0 +1,67 @@
+﻿@model (string Time, IEnumerable<Sybd_lab5.Mongo.Models.Menu> Data)
+
+@{
+    ViewData["Title"] = "Menus list";
+}
+<div class="text-center">
+    <div style="display: flex; justify-content: space-between;">
+        <h4 class="display-4">Menus Mongo</h4>
+        <h4 class="display-4">Time: @(Model.Time)</h4>
+    </div>
+</div>
+<div class="text-center" style="margin-top: 20px">
+    @{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Volume
+                    </th>
+                    <th>
+                        Gram
+                    </th>
+                    <th>
+                        Orders
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Data)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Volume)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gram)
+                        </td>
+                        <td>
+                            @foreach (var order in item.Orders)
+                            {
+                                <span>@(order)<br /></span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

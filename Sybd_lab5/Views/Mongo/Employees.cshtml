@@ -1,0 +1,46 @@
+﻿@model (string Time, IEnumerable<Sybd_lab5.Mongo.Models.Employee> Data)
+
+@{
+    ViewData["Title"] = "Employees list";
+}
+<div class="text-center">
+    <div style="display: flex; justify-content: space-between;">
+        <h4 class="display-4">Employees Mongo</h4>
+        <h4 class="display-4">Time: @(Model.Time)</h4>
+    </div>
+</div>
+<div class="text-center" style="margin-top: 20px">
+    @{
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Fio
+                    </th>
+                    <th>
+                        Post
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Data)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fio)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Post)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
