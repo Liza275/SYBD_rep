@@ -144,11 +144,13 @@ namespace Sybd_lab5
                 entity.HasOne(d => d.Buyer)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.Buyerid)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("buyer_fk");
 
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.Employeeid)
+                    .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("employee_fk");
             });
 

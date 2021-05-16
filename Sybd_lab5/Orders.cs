@@ -15,8 +15,8 @@ namespace Sybd_lab5
         }
 
         public int Id { get; set; }
-        public int Buyerid { get; set; }
-        public int Employeeid { get; set; }
+        public int? Buyerid { get; set; }
+        public int? Employeeid { get; set; }
         public DateTime? DataOrders { get; set; }
 
         public virtual Buyer Buyer { get; set; }
